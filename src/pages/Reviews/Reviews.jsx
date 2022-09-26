@@ -7,14 +7,20 @@ export const Reviews = () => {
     <>
       {reviews && (
         <>
-          <div>
-            {reviews.map(({ author, content, id }) => (
-              <li key={id}>
-                <p>{author}</p>
-                <p>{content}</p>
-              </li>
-            ))}
-          </div>
+          {reviews.length > 0 ? (
+            <div>
+              {reviews.results.map(({ id, author, content }) => {
+                return (
+                  <li key={id}>
+                    <p>{author}</p>
+                    <p>{content}</p>
+                  </li>
+                );
+              })}
+            </div>
+          ) : (
+            <p>We don't have any reviews for yhis movie</p>
+          )}
         </>
       )}
     </>

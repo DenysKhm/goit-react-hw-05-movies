@@ -1,20 +1,21 @@
 import { useFetchCast } from 'components/hooks/useFetchCast';
-// import { useState, useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
-// import { fetchMovieCast } from 'components/services/API';
 
 export const Cast = () => {
- const cast = useFetchCast()
-console.log(cast)
+  const cast = useFetchCast();
+
   return (
     <>
       {cast && (
         <>
           <div>
-            {cast.cast.map(i => {
-                return <h2>{i.name}</h2>
+            {cast.cast.map(({ id, name, character }) => {
+              return (
+                <li key={id}>
+                  <p>{name}</p>
+                  <p>{character}</p>
+                </li>
+              );
             })}
-            
           </div>
         </>
       )}
