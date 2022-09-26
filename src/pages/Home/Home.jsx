@@ -17,7 +17,7 @@ export const Home = () => {
     <>
     <h1>Trend Movies</h1>
     <ul>
-      {trendMovies.map(({ title, id, poster_path }) => <li key={id}>
+      {trendMovies.map(({ title, id}) => <li key={id}>
           <Link to={`movies/${id}`}>{title}</Link>
         </li>)}
     </ul>

@@ -14,19 +14,19 @@ export async function fetchSearchMovieByWord(query = '', page = 1) {
     return response.data;
   }
 
-export async function fetchSearchMovieById(movie_id) {
-    const response = await axios.get(`search/${movie_id}`)
+export async function fetchMovieById(movieId) {
+    const response = await axios.get(`/movie/${movieId}`)
     return response.data
 }
 
 
-export async function fetchSearchMovieCast(movie_id) {
+export async function fetchMovieCast(movie_id) {
     const response = await axios.get(`movie/${movie_id}/credits`)
     return response.data
 }
 
 
-export async function fetchSearchMovieReviews(movie_id) {
+export async function fetchMovieReviews(movie_id) {
     const response = await axios.get(`movie/${movie_id}/reviews`)
     return response.data
 }
