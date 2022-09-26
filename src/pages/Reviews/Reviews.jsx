@@ -7,7 +7,7 @@ export const Reviews = () => {
     <>
       {reviews && (
         <>
-          {reviews.length > 0 ? (
+          {reviews.results.length > 0 ? (
             <div>
               {reviews.results.map(({ id, author, content }) => {
                 return (
