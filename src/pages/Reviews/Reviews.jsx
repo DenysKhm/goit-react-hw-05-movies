@@ -19,7 +19,7 @@ export const Reviews = () => {
               })}
             </div>
           ) : (
-            <p>We don't have any reviews for yhis movie</p>
+            <p>We don't have any reviews for this movie</p>
           )}
         </>
       )}
