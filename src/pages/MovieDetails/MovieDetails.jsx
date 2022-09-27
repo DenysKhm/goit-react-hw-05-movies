@@ -1,17 +1,19 @@
 import { useFetchMovie } from 'components/hooks/useFetchMovie';
 import { Outlet } from 'react-router-dom';
 import { FilmDetail, FilmInfo, Title, H1, Text, Genre, NavLinkAI, AddInfo, GoBack } from './MovieDerails.styled';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const MovieDetails = () => {
   const movie = useFetchMovie();
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
 
   return (
     <>
       {movie && (
         <>
-        <GoBack onClick={() => navigate('/')}>Go back</GoBack>
+        <GoBack onClick={() => navigate(location?.state?.from ?? '/')}>Go back</GoBack>
         <FilmDetail>
           <img
             src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${movie.poster_path}`}
@@ -33,8 +35,8 @@ export const MovieDetails = () => {
           </FilmDetail>
           <AddInfo>
             <p>Additional information</p>
-            <NavLinkAI to={'cast'}>Cast</NavLinkAI>
-            <NavLinkAI to={'reviews'}>Reviews</NavLinkAI>
+            <NavLinkAI to={'cast'} state={location.state}>Cast</NavLinkAI>
+            <NavLinkAI to={'reviews'} state={location.state}>Reviews</NavLinkAI>
           </AddInfo>
           <Outlet />
         </>
