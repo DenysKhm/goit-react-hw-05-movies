@@ -9,9 +9,9 @@ export async function fetchGetTrendMovies() {
     return response.data
 }
 
-export async function fetchSearchMovieByWord(query = '', page = 1) {
-    const response = await axios.get(`search/movie?query=${query}&page=${page}`);
-    return response.data;
+export async function fetchSearchMovieByWord(query = '') {
+    const response = await axios.get(`search/movie?query=${query}`);
+    return response.data.results;
   }
 
 export async function fetchMovieById(movieId) {
