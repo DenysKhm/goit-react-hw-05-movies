@@ -1,17 +1,17 @@
-// import { useState, useEffect } from "react"
-// import { useParams } from "react-router-dom"
-// import { fetchMovieById } from "components/services/API"
 import { useFetchMovie } from 'components/hooks/useFetchMovie';
 import { Outlet } from 'react-router-dom';
-import { FilmDetail, FilmInfo, Title, H1, Text, Genre, NavLinkAI, AddInfo } from './MovieDerails.styled';
+import { FilmDetail, FilmInfo, Title, H1, Text, Genre, NavLinkAI, AddInfo, GoBack } from './MovieDerails.styled';
+import { useNavigate } from "react-router-dom";
 
 export const MovieDetails = () => {
   const movie = useFetchMovie();
+  const navigate = useNavigate(); 
 
   return (
     <>
       {movie && (
         <>
+        <GoBack onClick={() => navigate('/')}>Go back</GoBack>
         <FilmDetail>
           <img
             src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${movie.poster_path}`}

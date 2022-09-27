@@ -35,3 +35,7 @@ export const NavLinkAI = styled(NavLink)`
 export const AddInfo = styled.div`
   margin-bottom: 10px;
 `;
+
+export const GoBack = styled.button`
+  margin-bottom: 20px;
+`;
