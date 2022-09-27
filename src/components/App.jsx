@@ -5,6 +5,7 @@ import { Layout } from './Layout';
 import { MovieDetails } from 'pages/MovieDetails/MovieDetails';
 import { Cast } from 'pages/Cast/Cast';
 import {Reviews} from 'pages/Reviews/Reviews'
+import { PageNotFound } from 'pages/PageNotFound/PageNotFound';
 
 
 export const App = () => {
@@ -19,6 +20,7 @@ export const App = () => {
             <Route path="reviews" element={<Reviews />} />
           </Route>
         </Route>
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
   );
