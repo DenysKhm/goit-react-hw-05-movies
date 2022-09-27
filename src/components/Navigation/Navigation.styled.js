@@ -14,4 +14,6 @@ color: green;
 export const Title = styled.ul`
   display: flex;
   list-style: none;
+  margin-bottom: 30px;
+  margin-top: 10px;
 `;

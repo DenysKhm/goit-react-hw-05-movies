@@ -1,4 +1,5 @@
 import { useFetchReviews } from 'components/hooks/useFetchReviews';
+import { Item, H3, P } from './Reviews.styled';
 
 export const Reviews = () => {
   const reviews = useFetchReviews();
@@ -11,10 +12,10 @@ export const Reviews = () => {
             <div>
               {reviews.results.map(({ id, author, content }) => {
                 return (
-                  <li key={id}>
-                    <p>{author}</p>
-                    <p>{content}</p>
-                  </li>
+                  <Item key={id}>
+                    <H3>{author}:</H3>
+                    <P>"{content}"</P>
+                  </Item>
                 );
               })}
             </div>

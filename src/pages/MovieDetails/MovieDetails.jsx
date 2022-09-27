@@ -2,7 +2,8 @@
 // import { useParams } from "react-router-dom"
 // import { fetchMovieById } from "components/services/API"
 import { useFetchMovie } from 'components/hooks/useFetchMovie';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { FilmDetail, FilmInfo, Title, H1, Text, Genre, NavLinkAI, AddInfo } from './MovieDerails.styled';
 
 export const MovieDetails = () => {
   const movie = useFetchMovie();
@@ -11,23 +12,31 @@ export const MovieDetails = () => {
     <>
       {movie && (
         <>
-          <div>
-            <img src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${movie.poster_path}`} alt={movie.title} width='200'/>
-          </div>
-          <div>
-            <h2>{movie.title}</h2>
-            <p>User score: {movie.vote_average}%</p>
-            <h3>Overview</h3>
-            <p>{movie.overview}</p>
-            <h4>Genres</h4>
-            <p>{movie.genres.map(({ name, id }) => (<span key={id}>{name}</span>))}</p>
-          </div>
-          <div>
-           <p>Additional information</p>
-          <NavLink to={'cast'}>Cast</NavLink>
-          <NavLink to={'reviews'}>Reviews</NavLink>
-          </div>
-          <Outlet/>
+        <FilmDetail>
+          <img
+            src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${movie.poster_path}`}
+            alt={movie.title}
+            width="200"
+          />
+          <FilmInfo>
+            <H1>{movie.title}</H1>
+            <Text>User score: {movie.vote_average}%</Text>
+            <Title>Overview</Title>
+            <Text>{movie.overview}</Text>
+            <Title>Genres:</Title>
+            <Text>
+              {movie.genres.map(({ name, id }) => (
+                <Genre key={id}>{name}</Genre>
+              ))}
+            </Text>
+          </FilmInfo>
+          </FilmDetail>
+          <AddInfo>
+            <p>Additional information</p>
+            <NavLinkAI to={'cast'}>Cast</NavLinkAI>
+            <NavLinkAI to={'reviews'}>Reviews</NavLinkAI>
+          </AddInfo>
+          <Outlet />
         </>
       )}
     </>
