@@ -1,7 +1,7 @@
 import { useFetchReviews } from 'components/hooks/useFetchReviews';
 import { Item, H3, P } from './Reviews.styled';
 
-export const Reviews = () => {
+const Reviews = () => {
   const reviews = useFetchReviews();
 
   return (
@@ -27,3 +27,5 @@ export const Reviews = () => {
     </>
   );
 };
+
+export default Reviews

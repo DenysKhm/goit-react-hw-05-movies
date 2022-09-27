@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { fetchGetTrendMovies } from 'components/services/API';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 
-export const Home = () => {
+const Home = () => {
   const [trendMovies, setTrendMovies] = useState([]);
   const location = useLocation()
 
@@ -26,3 +26,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home

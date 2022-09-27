@@ -1,7 +1,7 @@
 import { useFetchCast } from 'components/hooks/useFetchCast';
 import { Casts, Item, Actor } from './Cast.styled';
 
-export const Cast = () => {
+const Cast = () => {
   const cast = useFetchCast();
 
   return (
@@ -24,3 +24,5 @@ export const Cast = () => {
     </>
   );
 };
+
+export default Cast

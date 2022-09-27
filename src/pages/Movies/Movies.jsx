@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Outlet, Link, useSearchParams, useLocation } from 'react-router-dom';
 import { fetchSearchMovieByWord } from 'components/services/API';
 
-export const Movies = () => {
+const Movies = () => {
   const [searchMovie, setSearchMovie] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const querySearch = searchParams.get('search');
@@ -40,3 +40,5 @@ export const Movies = () => {
     </>
   );
 };
+
+export default Movies

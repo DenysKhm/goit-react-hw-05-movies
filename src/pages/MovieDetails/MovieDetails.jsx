@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { FilmDetail, FilmInfo, Title, H1, Text, Genre, NavLinkAI, AddInfo, GoBack } from './MovieDerails.styled';
 import { useNavigate, useLocation } from "react-router-dom";
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const movie = useFetchMovie();
   const navigate = useNavigate();
   const location = useLocation();
@@ -44,3 +44,5 @@ export const MovieDetails = () => {
     </>
   );
 };
+
+export default MovieDetails
