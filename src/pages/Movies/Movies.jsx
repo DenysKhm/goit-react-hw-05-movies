@@ -17,7 +17,6 @@ const Movies = () => {
   };
 
   useEffect(() => {
-    console.log(querySearch);
     if (!querySearch) return;
     fetchSearchMovieByWord(querySearch).then(setSearchMovie);
   }, [querySearch]);

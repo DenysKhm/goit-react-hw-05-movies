@@ -7,7 +7,6 @@ const MovieDetails = () => {
   const movie = useFetchMovie();
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
 
   return (
     <>
